@@ -3,7 +3,7 @@
 
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "network", "battery", "clock"],
 
     "sway/workspaces": {
         "all-outputs": true,
@@ -20,6 +20,11 @@
             "8": [],
             "9": []
         }
+    },
+
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10
     },
 
     "pulseaudio": {

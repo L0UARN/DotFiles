@@ -12,6 +12,8 @@ $blue0: #458588;
 $blue1: #83a598;
 $purple0: #b16286;
 $purple1: #d3869b;
+$aqua0: #689d6a;
+$aqua1: #8ec07c;
 
 @mixin animation($name) {
     animation-name: $name;
@@ -82,7 +84,8 @@ $purple1: #d3869b;
 
 .modules-left button,
 .modules-center button,
-.modules-right button {
+.modules-right button,
+.modules-right box {
     margin: 0 0.5rem;
     padding: 0.33rem 1rem;
     border-radius: 4px;
@@ -92,7 +95,8 @@ $purple1: #d3869b;
     margin-left: 0;
 }
 
-.modules-right button {
+.modules-right button,
+.modules-right box {
     margin-right: 0;
 }
 
@@ -106,6 +110,25 @@ $purple1: #d3869b;
 
 #workspaces button.urgent {
     @include animation(workspace_urgent);
+}
+
+#tray {
+    background-color: $aqua0;
+}
+
+#tray menu {
+    background-color: $bg1;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}
+
+#tray menu * {
+    margin: 0;
+    padding: 0;
+}
+
+#tray menu > * {
+    margin-bottom: 0.25rem;
 }
 
 #pulseaudio {
