@@ -1,5 +1,8 @@
 ### Variables ###
 
+# Config files path
+set $config /home/louarn/.config
+
 # Sway Control Key
 set $sck Mod4
 
@@ -60,16 +63,16 @@ bindsym --no-repeat $sck+c exec $code_editor
 bindsym --no-repeat $sck+l exec "swaylock"
 
 # Brightness
-bindsym XF86MonBrightnessUp exec "fish /home/louarn/.config/scripts/brightness.fish +"
-bindsym XF86MonBrightnessDown exec "fish /home/louarn/.config/scripts/brightness.fish -"
+bindsym XF86MonBrightnessUp exec "fish $config/scripts/brightness.fish +"
+bindsym XF86MonBrightnessDown exec "fish $config/scripts/brightness.fish -"
 
 # Volume
-bindsym XF86AudioMute exec fish /home/louarn/.config/scripts/volume.fish o m
-bindsym XF86AudioLowerVolume exec fish /home/louarn/.config/scripts/volume.fish o -
-bindsym XF86AudioRaiseVolume exec fish /home/louarn/.config/scripts/volume.fish o +
-bindsym Shift+XF86AudioMute exec fish /home/louarn/.config/scripts/volume.fish i m
-bindsym Shift+XF86AudioLowerVolume exec fish /home/louarn/.config/scripts/volume.fish i -
-bindsym Shift+XF86AudioRaiseVolume exec fish /home/louarn/.config/scripts/volume.fish i +
+bindsym XF86AudioMute exec "fish $config/scripts/volume.fish o m"
+bindsym XF86AudioLowerVolume exec "fish $config/scripts/volume.fish o -"
+bindsym XF86AudioRaiseVolume exec "fish $config/scripts/volume.fish o +"
+bindsym Shift+XF86AudioMute exec "fish $config/scripts/volume.fish i m"
+bindsym Shift+XF86AudioLowerVolume exec "fish $config/scripts/volume.fish i -"
+bindsym Shift+XF86AudioRaiseVolume exec "fish $config/scripts/volume.fish i +"
 
 # Kill the focused window
 bindsym --no-repeat $sck+q kill
@@ -149,15 +152,15 @@ gaps inner 16
 gaps outer 0
 
 # Wallpaper
-exec_always wpaperd
+exec_always "wpaperd"
 
 # Bar
 bar swaybar_command waybar
 
 # Theme
-exec_always gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Yellow-Dark'
-exec_always gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Original-Ice'
-exec_always gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
-exec_always gsettings set org.gnome.desktop.interface font-name 'Lexend Deca 12'
-exec_always gsettings set org.gnome.desktop.wm.preferences button-layout ''
+exec_always "gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Yellow-Dark'"
+exec_always "gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Original-Ice'"
+exec_always "gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'"
+exec_always "gsettings set org.gnome.desktop.interface font-name 'Lexend Deca 12'"
+exec_always "gsettings set org.gnome.desktop.wm.preferences button-layout ''"
 seat seat0 xcursor_theme 'Bibata-Original-Ice' 24
