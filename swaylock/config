@@ -1,0 +1,45 @@
+font=Lexend Deca
+font-size=24
+text-color=fbf1c7
+text-clear-color=fbf1c7
+text-caps-lock-color=fbf1c7
+text-ver-color=fbf1c7
+text-wrong-color=fbf1c7
+
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=00000000
+
+indicator-radius=192
+indicator-thickness=8
+
+inside-color=28282870
+inside-clear-color=28282870
+inside-caps-lock-color=28282870
+inside-ver-color=28282870
+inside-wrong-color=28282870
+
+key-hl-color=98971a
+separator-color=3c3836
+
+line-color=282828
+line-clear-color=282828
+line-caps-lock-color=282828
+line-ver-color=282828
+line-wrong-color=282828
+
+ring-color=98971a
+ring-clear-color=458588
+ring-caps-lock-color=b16286
+ring-ver-color=98971a
+ring-wrong-color=cc241d
+
+screenshots
+effect-blur=8x4
+effect-vignette=0.75:1
+fade-in=0.25
+# clock
+timestr=%-H:%M
+datestr=%A %-d %B %Y
+
+hide-keyboard-layout

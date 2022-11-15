@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+
+    "modules-left": ["sway/workspaces"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock"],
+
+    "sway/workspaces": {
+        "all-outputs": true,
+        "format": "{name}",
+        "disable-scroll": true,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        }
+    },
+
+    "pulseaudio": {
+        "format": "墳 {volume}% - {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " {volume}%",
+        "fomat-bluetooth": " {volume}%",
+        "format-muted": "婢 {volume}% - {format_source}"
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": "ﯱ {ifname}",
+        "format-disconnected": " Disconnected"
+    },
+
+    "backlight": {
+        "format": "滛 {percent}%"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "format-warning": " {capacity}%",
+        "format-critical": " {capacity}%",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        }
+    },
+
+    "clock": {
+        "format": " {:%A %d %B %Y -  %H:%M}"
+    }
+}

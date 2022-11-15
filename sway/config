@@ -1,0 +1,163 @@
+### Variables ###
+
+# Sway Control Key
+set $sck Mod4
+
+# Applications
+set $terminal alacritty
+set $browser firefox
+set $explorer nautilus
+set $code_editor code
+
+
+### Display ###
+
+output eDP-1 {
+    resolution 1920x1080@60.052Hz
+    position 0,0
+}
+
+output HDMI-A-1 {
+    resolution 1920x1080@60Hz
+    position 1920,0
+}
+
+workspace External output HDMI-A-1
+
+
+### Input ###
+
+input type:keyboard {
+    repeat_delay 250
+    repeat_rate 25
+    xkb_layout us
+    xkb_numlock enabled
+}
+
+input type:touchpad {
+    accel_profile adaptive
+    pointer_accel 0
+    click_method clickfinger
+    middle_emulation enabled
+    natural_scroll enabled
+    scroll_method two_finger
+    scroll_factor 0.15
+    tap enabled
+    tap_button_map lrm
+    dwt disabled
+}
+
+
+### Keybinds ###
+
+# Applications
+bindsym --no-repeat $sck+t exec $terminal
+bindsym --no-repeat $sck+b exec $browser
+bindsym --no-repeat $sck+e exec $explorer
+bindsym --no-repeat $sck+c exec $code_editor
+
+# Lock
+bindsym --no-repeat $sck+l exec "swaylock"
+
+# Brightness
+bindsym XF86MonBrightnessUp exec "fish /home/louarn/.config/scripts/brightness.fish +"
+bindsym XF86MonBrightnessDown exec "fish /home/louarn/.config/scripts/brightness.fish -"
+
+# Volume
+bindsym XF86AudioMute exec fish /home/louarn/.config/scripts/volume.fish o m
+bindsym XF86AudioLowerVolume exec fish /home/louarn/.config/scripts/volume.fish o -
+bindsym XF86AudioRaiseVolume exec fish /home/louarn/.config/scripts/volume.fish o +
+bindsym Shift+XF86AudioMute exec fish /home/louarn/.config/scripts/volume.fish i m
+bindsym Shift+XF86AudioLowerVolume exec fish /home/louarn/.config/scripts/volume.fish i -
+bindsym Shift+XF86AudioRaiseVolume exec fish /home/louarn/.config/scripts/volume.fish i +
+
+# Kill the focused window
+bindsym --no-repeat $sck+q kill
+
+# Move the focus
+bindsym $sck+Up focus up
+bindsym $sck+Down focus down
+bindsym $sck+Left focus left
+bindsym $sck+Right focus right
+
+# Move the focused window
+bindsym $sck+Shift+Left move left
+bindsym $sck+Shift+Down move down
+bindsym $sck+Shift+Up move up
+bindsym $sck+Shift+Right move right
+
+# Switch the focused workspace
+bindsym $sck+1 workspace number 1
+bindsym $sck+2 workspace number 2
+bindsym $sck+3 workspace number 3
+bindsym $sck+4 workspace number 4
+bindsym $sck+5 workspace number 5
+bindsym $sck+6 workspace number 6
+bindsym $sck+7 workspace number 7
+bindsym $sck+8 workspace number 8
+bindsym $sck+9 workspace number 9
+bindsym $sck+0 workspace External
+
+# Move the focused window to a workspace
+bindsym $sck+Shift+1 move container to workspace number 1
+bindsym $sck+Shift+2 move container to workspace number 2
+bindsym $sck+Shift+3 move container to workspace number 3
+bindsym $sck+Shift+4 move container to workspace number 4
+bindsym $sck+Shift+5 move container to workspace number 5
+bindsym $sck+Shift+6 move container to workspace number 6
+bindsym $sck+Shift+7 move container to workspace number 7
+bindsym $sck+Shift+8 move container to workspace number 8
+bindsym $sck+Shift+9 move container to workspace number 9
+bindsym $sck+Shift+0 move container to workspace External
+
+# Change the next split
+bindsym $sck+Alt+Up splitv
+bindsym $sck+Alt+Down splitv
+bindsym $sck+Alt+Left splith
+bindsym $sck+Alt+Right splith
+
+# Make the focused window fullscreen
+bindsym $sck+f fullscreen
+
+# Resize the focused window
+bindsym $sck+Control+Up resize grow height 10px
+bindsym $sck+Control+Down resize shrink height 10px
+bindsym $sck+Control+Left resize shrink width 10px
+bindsym $sck+Control+Right resize grow width 10px
+
+# Reload the configuration file
+bindsym $sck+r reload
+
+
+### Style ###
+
+# Border type
+default_border pixel 4
+default_floating_border pixel 4
+
+# Window colors
+client.focused          #d79921 #282828 #fbf1c7 #d79921 #d79921
+client.focused_inactive #98971a #282828 #fbf1c7 #98971a #98971a
+client.unfocused        #98971a #282828 #fbf1c7 #98971a #98971a
+client.urgent           #d79921 #282828 #fbf1c7 #d79921 #d79921
+
+# Font
+font Lexend Deca 14
+
+# Gaps
+gaps inner 16
+gaps outer 0
+
+# Wallpaper
+exec_always wpaperd
+
+# Bar
+bar swaybar_command waybar
+
+# Theme
+exec_always gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Yellow-Dark'
+exec_always gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Original-Ice'
+exec_always gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+exec_always gsettings set org.gnome.desktop.interface font-name 'Lexend Deca 12'
+exec_always gsettings set org.gnome.desktop.wm.preferences button-layout ''
+seat seat0 xcursor_theme 'Bibata-Original-Ice' 24
