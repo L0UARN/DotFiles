@@ -15,10 +15,10 @@ $purple1: #d3869b;
 $aqua0: #689d6a;
 $aqua1: #8ec07c;
 
-@mixin animation($name) {
+@mixin animation($name, $duration) {
     animation-name: $name;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
+    animation-duration: $duration;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -109,7 +109,7 @@ $aqua1: #8ec07c;
 }
 
 #workspaces button.urgent {
-    @include animation(workspace_urgent);
+    @include animation(workspace_urgent, 0.5s);
 }
 
 #tray {
@@ -148,15 +148,15 @@ $aqua1: #8ec07c;
 }
 
 #battery.charging {
-    @include animation(battery_charging);
+    @include animation(battery_charging, 2s);
 }
 
 #battery.warning:not(.charging) {
-    @include animation(battery_warning);
+    @include animation(battery_warning, 0.5s);
 }
 
 #battery.critical:not(.charging) {
-    @include animation(battery_critical);
+    @include animation(battery_critical, 0.25s);
 }
 
 #clock {
