@@ -1,0 +1,66 @@
+$bg0: #282828;
+$bg1: #3c3836;
+$fg0: #fbf1c7;
+
+$red0: #cc241d;
+$red1: #fb4934;
+$green0: #98971a;
+$green1: #b8bb26;
+$yellow0: #d79921;
+$yellow1: #fabd2f;
+$blue0: #458588;
+$blue1: #83a598;
+$purple0: #b16286;
+$purple1: #d3869b;
+$aqua0: #689d6a;
+$aqua1: #8ec07c;
+
+* {
+    all: unset;
+}
+
+#window {
+    font-family: 'Lexend Deca';
+    font-weight: 400;
+    font-size: 16px;
+    color: $fg0;
+}
+
+#outer-box {
+    background: $bg0;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+#input {
+    color: $fg0;
+
+    padding: 0.33rem 1rem;
+    margin-bottom: 1rem;
+    background-color: $green0;
+    border-radius: 4px;
+}
+
+#input *:first-child {
+    margin-right: 0.5rem;
+}
+
+#scroll {
+    padding: 0.5rem;
+    background-color: $bg1;
+    border-radius: 4px;
+}
+
+.entry {
+    padding: 0.33rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+#img {
+    margin-right: 0.5rem;
+}
+
+#selected {
+    background-color: $blue0;
+}
