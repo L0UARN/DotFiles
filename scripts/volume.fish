@@ -1,31 +1,34 @@
 #!/bin/fish
 
+set increment 5
+
 if test $argv[1] = "i"
-    set volume (pactl get-source-volume @DEFAULT_SOURCE@ | egrep -o "[0-9]{1,3}%" | head -1 | rev | cut -c 2- | rev)
-    echo $volume
-    if test $argv[2] = "+"
-        if test $volume -lt 96
-            exec pactl set-source-volume @DEFAULT_SOURCE@ +5%
-        else
-            exec pactl set-source-volume @DEFAULT_SOURCE@ 100%
-        end
-    else if test $argv[2] = "-"
-        exec pactl set-source-volume @DEFAULT_SOURCE@ -5%
-    else if test $argv[2] = "m"
-        exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    end
+    set target0 "source"
+    set target1 "SOURCE"
+    set current (pactl get-source-volume @DEFAULT_SOURCE@ | grep -Eo "[0-9]{1,3}%" | head -1 | rev | cut -c 2- | rev)
 else if test $argv[1] = "o"
-    set volume (pactl get-sink-volume @DEFAULT_SINK@ | egrep -o "[0-9]{1,3}%" | head -1 | rev | cut -c 2- | rev)
-    echo $volume
-    if test $argv[2] = "+"
-        if test $volume -lt 96
-            exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-        else
-            exec pactl set-sink-volume @DEFAULT_SINK@ 100%
-        end
-    else if test $argv[2] = "-"
-        exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    else if test $argv[2] = "m"
-        exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    end
+    set target0 "sink"
+    set target1 "SINK"
+    set current (pactl get-sink-volume @DEFAULT_SINK@ | grep -Eo "[0-9]{1,3}%" | head -1 | rev | cut -c 2- | rev)
+else
+    exit
 end
+
+if test $argv[2] = "+"
+    set command "volume"
+    if test (echo "$current + $increment" | bc) -gt 100
+        set modifier "100%"
+    else
+        set modifier "+$increment%"
+    end
+else if test $argv[2] = "-"
+    set command "volume"
+    set modifier "-$increment%"
+else if test $argv[2] = "m"
+    set command "mute"
+    set modifier "toggle"
+else
+    exit
+end
+
+eval "pactl set-$target0-$command @DEFAULT_$target1@ $modifier"
