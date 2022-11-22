@@ -1,0 +1,12 @@
+show=dmenu
+width=40%
+height=60%
+location=center
+prompt=Search a power option...
+term=alacritty
+matching=contains
+insensitive=true
+sort_order=default
+no_actions=true
+allow_images=false
+image_size=16

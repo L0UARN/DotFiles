@@ -56,6 +56,7 @@ input type:touchpad {
 
 # Applications
 bindsym --no-repeat $sck+space exec $launcher
+bindsym --no-repeat $sck+escape exec "fish $config/scripts/powermenu.fish"
 bindsym --no-repeat $sck+t exec $terminal
 bindsym --no-repeat $sck+b exec $browser
 bindsym --no-repeat $sck+e exec $explorer
