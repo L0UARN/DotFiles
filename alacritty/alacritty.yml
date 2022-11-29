@@ -18,19 +18,19 @@ font:
   size: 15.0
 
   normal:
-    family: Cascadia Code
+    family: JetBrainsMono Nerd Font
     style: Regular
 
   italic:
-    family: Cascadia Code
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold:
-    family: Cascadia Code
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   bold_italic:
-    family: Cascadia Code
+    family: JetBrainsMono Nerd Font
     style: BoldItalic
 
 cursor:
