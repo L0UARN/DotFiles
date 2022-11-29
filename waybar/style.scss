@@ -85,7 +85,8 @@ $aqua1: #8ec07c;
 .modules-left button,
 .modules-center button,
 .modules-right button,
-.modules-right box {
+.modules-right box,
+.modules-right label {
     margin: 0 0.5rem;
     padding: 0.33rem 1rem;
     border-radius: 4px;
@@ -96,7 +97,8 @@ $aqua1: #8ec07c;
 }
 
 .modules-right button,
-.modules-right box {
+.modules-right box,
+.modules-right label {
     margin-right: 0;
 }
 

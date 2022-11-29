@@ -161,7 +161,7 @@ exec_always "pkill wpaperd ; wpaperd"
 bar swaybar_command waybar
 
 # Theme
-exec_always "gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Yellow-Dark'"
+exec_always "gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Dark-BLR'"
 exec_always "gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Original-Ice'"
 exec_always "gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'"
 exec_always "gsettings set org.gnome.desktop.interface font-name 'Lexend Deca 12'"

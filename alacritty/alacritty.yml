@@ -15,22 +15,22 @@ scrolling:
   multiplier: 4
 
 font:
-  size: 14.0
+  size: 15.0
 
   normal:
-    family: JetBrains Mono Nerd Font
+    family: Cascadia Code
     style: Regular
 
   italic:
-    family: JetBrains Mono Nerd Font
+    family: Cascadia Code
     style: Italic
 
   bold:
-    family: JetBrains Mono Nerd Font
+    family: Cascadia Code
     style: Bold
 
   bold_italic:
-    family: JetBrains Mono Nerd Font
+    family: Cascadia Code
     style: BoldItalic
 
 cursor:
